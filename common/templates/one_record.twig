@@ -21,18 +21,18 @@
 </td>
 {% endfor %}
 
-<td>
+<td class="align-middle">
 	<audio controls preload="none">
 	  <source src="./files/{{data[0]["filename"]}}" type="audio/wav">
 	Your browser does not support the audio element.
 	</audio>
 </td>
-<td class="button_basket">
-	<svg xmlns="http://www.w3.org/2000/svg" class="button_basket_svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="b_{{data[0]["record_id"]}}_add" onclick="javascript:add_to_basket({{data[0]["record_id"]}})" {% if data[0]["in_basket"]%}style='display:none'{% endif %} width="20" height="20">
+<td class="button_basket align-middle">
+	<svg xmlns="http://www.w3.org/2000/svg" class="btn-svg rounded-circle" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="b_{{data[0]["record_id"]}}_add" onclick="javascript:add_to_basket({{data[0]["record_id"]}})" {% if data[0]["in_basket"]%}style='display:none'{% endif %} width="20" height="20">
   		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
 	</svg>
 
-	<svg xmlns="http://www.w3.org/2000/svg" class="button_basket_svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="b_{{data[0]["record_id"]}}_rem" onclick="javascript:rem_from_basket({{data[0]["record_id"]}})" {% if not data[0]["in_basket"]%}style='display:none'{% endif %} width="20" height="20">
+	<svg xmlns="http://www.w3.org/2000/svg" class="btn-svg rounded-circle" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="b_{{data[0]["record_id"]}}_rem" onclick="javascript:rem_from_basket({{data[0]["record_id"]}})" {% if not data[0]["in_basket"]%}style='display:none'{% endif %} width="20" height="20">
   		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
 	</svg>
 </td>

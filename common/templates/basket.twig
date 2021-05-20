@@ -19,8 +19,8 @@
                         <th>{{data["label"]}}</th>
                     {% endfor %}
                     <th class="text-right">
-                        <a href='download_basket.php' target='_blank' class="btn btn-custom-secondary rounded-circle p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" height="20" width="20">
+                        <a href='download_basket.php' target='_blank'>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="rounded-circle btn-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" height="20" width="20">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
                         </a>
@@ -32,6 +32,13 @@
                         {% include 'one_record.twig' with {'data': data, 'metas':metas} %}
                     </tr>
                     {% endfor %}
+                    {% if results == null %}
+                        <tr>
+                            <td colspan=12 class="text-center">
+                                No records in the basket
+                            </td>
+                        </tr>
+                        {% endif %}
                 </tbody>
             </table>
         </div>
