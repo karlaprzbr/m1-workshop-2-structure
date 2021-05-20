@@ -1,0 +1,39 @@
+{% extends 'base.twig' %}
+
+{% block title 'Basket' %}
+
+{% block content %}
+    <div class="container">
+        <div class="bg-white rounded shadow table-responsive">
+            <table class="table">
+                <thead>
+                    <th></th>
+                    {% for data in metas["record"] %}
+                        <th>{{data["label"]}}</th>
+                    {% endfor %}
+                    <th></th>
+                    {% for data in metas["production"] %}
+                        <th>{{data["label"]}}</th>
+                    {% endfor %}
+                    {% for data in metas["speaker"] %}
+                        <th>{{data["label"]}}</th>
+                    {% endfor %}
+                    <th class="text-right">
+                        <a href='download_basket.php' target='_blank' class="btn btn-flashy-green rounded-circle p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" height="20" width="20">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </a>
+                    </th>
+                </thead>
+                <tbody>
+                    {% for data in results %}
+                    <tr id="record{{ data["record_id"] }}">
+                        {% include 'one_record.twig' with {'data': data, 'metas':metas} %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

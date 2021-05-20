@@ -1,0 +1,38 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div class="container">
+	<h1>Gestion de la base - table {{table}}</h1>
+	
+	Champs obligatoires
+	<ul>
+		{% for data in required %}
+			<li>{{ data }}</li>
+		{% endfor %}
+	</ul>
+	
+	Champs optionels
+	<div class="bg-white rounded shadow table-responsive">
+		<table class="table">
+			<thead>
+				<th></th>
+				<th>Nom (unique)</th>
+				<th>Type</th>
+				<th>Description</th>
+				<th>Actif</th>
+			</thead>
+			<tbody>
+				{% for data in meta %}
+				<tr>{% include 'one_meta.twig' with {'data': data} %}</tr>
+				{% endfor %}
+				<tr>
+					<td colspan=5 class="text-right">
+						<a class="btn btn-custom-secondary" data-bs-toggle="modal" data-bs-target="#editModal" href='edit_meta.php?metaid=-1&table={{table}}'>Ajouter un nouveau champ optionel</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>
+</div>
+{% endblock %}

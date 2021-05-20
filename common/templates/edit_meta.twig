@@ -1,0 +1,78 @@
+{% extends 'base.twig' %}
+
+{% block title 'Basket' %}
+
+{% block content %}
+<div class="container d-grid m-auto">
+	<div class="bg-white rounded shadow p-5">
+		<h1 class="text-custom-secondary text-center">Edition d'un champ optionel</h1>
+		<form id="edit_form" method="post">
+			<input type="hidden" name="act" value="save">
+			<div class="row mb-3">
+				<div class="col"></div>
+				<div class="col">
+					{% if meta["id"] %}#{{meta["id"]}}{% endif %}
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Pour la table</label>
+				</div>
+				<div class="col">
+					{{meta["table_name"]}}
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Nom du champ</label>
+				</div>
+				<div class="col">
+					<input name='field_name' value='{{meta["field_name"]}}' class="form-control"/>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Type du champ</label>
+				</div>
+				<div class="col">
+					{% if meta["id"] == -1 %}
+					<select name="type" class="form-select">
+						{% for t in types %}
+							<option value="{{t}}"{% if t == meta["type"] %} selected{% endif %}>{{t}}</option>
+						{% endfor %}
+					</select>
+					{% else %}
+						{{meta["type"]}}
+					{% endif %}
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Intitulé du champ (pour la recherche)</label>
+				</div>
+				<div class="col">
+					<input name='label' value='{{meta["label"]}}' class="form-control"/>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Champ actif ?</label>
+				</div>
+				<div class="col">
+					<select name="active" class="form-select">
+						<option value="1" {% if '1' == meta["active"] %} selected{% endif %}>Oui</option>
+						<option value="0" {% if '0' == meta["active"] %} selected{% endif %}>Non</option>
+					</select>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+				</div>
+				<div class="col text-right">
+					<input type="submit" class="btn btn-custom-primary w-100"/>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

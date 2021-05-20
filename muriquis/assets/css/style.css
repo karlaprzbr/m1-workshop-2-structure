@@ -1,0 +1,8 @@
+/* CUSTOM STYLE FOR MURIQUIS */
+
+@import url("../../../common/assets/css/style.css");
+
+:root {
+    --custom-primary: #1d4c4f;
+    --custom-secondary: #28b67e;
+}

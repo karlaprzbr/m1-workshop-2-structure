@@ -1,0 +1,52 @@
+{% extends 'base.twig' %}
+
+{% block title 'Home' %}
+
+{% block content %}
+
+<main class="container-fluid">
+    <div class="row mt-4">
+        <!-- Sidebar -->
+        <div class="col-12 col-md-2 d-none d-md-block sidebar-light accordion" id="accordionSidebar">
+
+            <div>
+                {% include 'filter_table.twig' %}
+            </div>
+
+        </div>
+        <!-- End of Sidebar -->
+
+        {# Start main content #}
+        <div class="col-12 col-md-10">
+            <div class="bg-white rounded shadow table-responsive">
+                <table class="table">
+                    <thead>           
+                        {% for data in metas["record"] %}
+                            <th>{{data["label"]}}</th>
+                        {% endfor %}
+                        <th></th>
+                        {% for data in metas["production"] %}
+                            <th>{{data["label"]}}</th>
+                        {% endfor %}
+                        <th></th>
+                        {% for data in metas["speaker"] %}
+                            <th>{{data["label"]}}</th>
+                        {% endfor %}
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        {% for data in results %}
+                        <tr id="record{{ data["record_id"] }}">
+                            {% include 'one_record.twig' with {'data': data, 'metas':metas} %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {# End main content #}
+    </div>
+</main>
+
+{% endblock %}
