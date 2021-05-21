@@ -1,8 +1,0 @@
-/* CUSTOM STYLE FOR EACH SITE */
-
-@import url("../../../common/assets/css/style.css");
-
-:root {
-     --custom-primary: ;  /* choisir la couleur primaire du site */
-    --custom-secondary: ; /* choisir la coueleur secondaire du site */
-}
