@@ -1,6 +1,7 @@
 {% for met in metas["record"] %}
 <td>{{data[0][met["field_name"]]}}</td>
 {% endfor %}
+
 <td>
 {% for line in data %}
 	{{line["sequence_order"]}}<br/>
