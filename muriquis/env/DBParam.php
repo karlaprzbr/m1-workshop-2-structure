@@ -2,8 +2,8 @@
 
 $dbHost = "localhost";
 $dbUser = "root";
-$dbPassword = "";
-$dbName = "muriqui";
-$port = 3306;
+$dbPassword = "root";
+$dbName = "workshop2";
+$port = 8889;
 
 ?>

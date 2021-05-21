@@ -3,7 +3,8 @@
     
     //Basket functions
 
-    $("#edit_form").validate();
+    // $("#edit_form").validate();
+
     function add_to_basket(rid) {
         $.ajax({
             url: 'add_to_basket.php',
@@ -28,14 +29,14 @@
         });
     }
 
-    function clear_elt(element_id) {
-        $('#' + element_id).val('');
-    }
-    $(function () {
-        $(".dp").datepicker({
-            dateFormat: "dd/mm/yy",
-        });
-    });
+    // function clear_elt(element_id) {
+    //     $('#' + element_id).val('');
+    // }
+    // $(function () {
+    //     $(".dp").datepicker({
+    //         dateFormat: "dd/mm/yy",
+    //     });
+    // });
 
     // Scroll to top button appear
     $(document).on('scroll', function () {
@@ -49,10 +50,46 @@
 
     // Smooth scrolling using jQuery easing
     $(document).on('click', 'a.scroll-to-top', function (e) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top)
-        }, 1000, 'easeInOutExpo');
+        $('html, body').stop().animate({scrollTop:0}, 500, 'swing');
         e.preventDefault();
     });
 })(jQuery); // End of use strict
+
+
+
+
+
+
+// Dark Mode
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+
+console.log('coucou')
