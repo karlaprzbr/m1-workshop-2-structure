@@ -42,23 +42,7 @@ $(document).on('click', 'a.scroll-to-top', function (e) {
 
 
 
-// Dark Mode
-
-
-
-// darkSwitch.addEventListener('click', function () {
-//     console.log('yes')
-//     if (darkSwitch) {
-//         initTheme();
-//         darkSwitch.addEventListener("change", function () {
-//           resetTheme();
-//         });
-//         console.log('bonjour')
-//       }
-// })
-
-
-
+// Filtre
 
 document.getElementById('filtresBtn').addEventListener('click', openFilters);
 var isOpened = false;
