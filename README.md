@@ -18,4 +18,6 @@
         - custom primary : choisir une couleur foncée, pour qu'elle s'accorde avec le mode sombre
         - custom secondary : choisir une couleur plus claire, sur la même base que la custom primary
 
+4. Ajouter le dossier files avec les sources des audios dans le dossier assets du sous-site.
+
 IMPORTANT : toute modification apportée dans le dossier common se répercutera sur tous les sous-sites.
