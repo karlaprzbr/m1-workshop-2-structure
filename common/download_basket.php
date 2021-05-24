@@ -23,10 +23,10 @@ $SQL .= str_replace(" r.id ", " r.record_id ", $tmp);
 $res = $dbh->executeQuery($SQL);
 $files = [];
 while($row = $res->fetch_assoc()){
-	$files[] = "./files/".$row["filename"];
+	$files[] = "./assets/files/".$row["filename"];
 }
 
-$zipname = './tmp/'.md5(time()).'.zip';
+$zipname = md5(time()).'.zip';
 $zip = new ZipArchive;
 $zip->open($zipname, ZipArchive::CREATE);
 foreach ($files as $file) {

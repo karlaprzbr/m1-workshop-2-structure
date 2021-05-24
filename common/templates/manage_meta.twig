@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="container">
-	<h1>Gestion de la base - table {{table}}</h1>
+	<h1 class="mb-4">Gestion de la base - table {{table}}</h1>
 	
 	{# {{ dump(required) }} #}
 	{% if required is not empty%}
 
-		<h2>Champs obligatoires</h2>
+		<h2 class="mb-3">Champs obligatoires</h2>
 		<ul>
 			{% for data in required %}
 				<li>{{ data }}</li>
@@ -15,7 +15,7 @@
 		</ul>
 	{% endif %}
 
-	<h2>Champs optionels</h2>
+	<h2 class="mb-3">Champs optionels</h2>
 	<div class="bg-white rounded shadow table-responsive">
 		<table class="table">
 			<thead>
