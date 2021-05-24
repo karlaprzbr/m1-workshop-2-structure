@@ -54,3 +54,4 @@
 .DS_Store
 
 muriquis/env/DBParam.php
+muriquis/assets/files/*
