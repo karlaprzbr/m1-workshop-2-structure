@@ -23,6 +23,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
+    grid-template-columns: 100%;
     /* transition: background .2s ease-out; */
 }
 
@@ -45,7 +46,7 @@ h2 {
 
 .table {
     color: var(--text-color);
-    overflow-x: scroll;
+    overflow-x: scroll !important;
 }
 
 .bg-custom-primary {
