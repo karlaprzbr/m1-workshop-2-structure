@@ -60,4 +60,17 @@ $(document).on('click', 'a.scroll-to-top', function (e) {
 
 
 
-// 
+document.getElementById('filtresBtn').addEventListener('click', openFilters);
+var isOpened = false;
+
+function openFilters() {
+  if(isOpened == true) {
+    document.getElementById('filtresBtn').innerHTML = "Open filters";
+    document.getElementById('filtresBlock').classList.add('d-none');
+    isOpened = false;
+  } else {
+    document.getElementById('filtresBtn').innerHTML = "Close filters";
+    document.getElementById('filtresBlock').classList.remove('d-none');
+    isOpened = true;
+  }
+}

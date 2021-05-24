@@ -7,12 +7,13 @@
 <main class="container-fluid">
     <div class="row mt-4">
         <!-- Sidebar -->
-        <div class="col-12 col-md-2 d-none d-md-block sidebar-light accordion" id="accordionSidebar">
-
+        <div class="col-12">
+            <button class="btn btn-custom-primary d-block d-md-none w-100 my-4" id="filtresBtn">Open filters</button>
+        </div>
+        <div class="col-12 col-md-2 sidebar-light accordion d-none d-md-block" id="filtresBlock">
             <div>
                 {% include 'filter_table.twig' %}
             </div>
-
         </div>
         <!-- End of Sidebar -->
 
