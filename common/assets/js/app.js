@@ -85,3 +85,26 @@ function resetTheme() {
     localStorage.removeItem("darkSwitch");
   }
 }
+
+document.getElementById('filtresBtn').addEventListener('click', openFilters);
+// document.getElementById('filtresBlock').addEventListener('load', hideFilters);
+// window.addEventListener('load', hideFilters);
+var isOpened = false;
+
+function openFilters() {
+  if(isOpened == true) {
+    document.getElementById('filtresBtn').innerHTML = "Open filters";
+    document.getElementById('filtresBlock').classList.add('d-none');
+    isOpened = false;
+  } else {
+    document.getElementById('filtresBtn').innerHTML = "Close filters";
+    document.getElementById('filtresBlock').classList.remove('d-none');
+    isOpened = true;
+  }
+}
+
+function hideFilters() {
+  document.getElementById('filtresBlock').style.display = 'none';
+  document.getElementById('filtresBlock').hidden = true;
+  isOpened = false;
+}
