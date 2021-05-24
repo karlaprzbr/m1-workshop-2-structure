@@ -87,8 +87,6 @@ function resetTheme() {
 }
 
 document.getElementById('filtresBtn').addEventListener('click', openFilters);
-// document.getElementById('filtresBlock').addEventListener('load', hideFilters);
-// window.addEventListener('load', hideFilters);
 var isOpened = false;
 
 function openFilters() {
@@ -101,10 +99,4 @@ function openFilters() {
     document.getElementById('filtresBlock').classList.remove('d-none');
     isOpened = true;
   }
-}
-
-function hideFilters() {
-  document.getElementById('filtresBlock').style.display = 'none';
-  document.getElementById('filtresBlock').hidden = true;
-  isOpened = false;
 }
